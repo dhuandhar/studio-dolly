@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Dolly — Hand-Painted Warli Art & Rangvan Coasters</title>
+<meta name="description" content="Studio Dolly: hand-painted Warli folk-art and Rangvan mythology coasters and tiles, painted freehand by Anju Bhatnagar and sealed to take a hot mug. Two collections, 44 pieces, commissions open.">
+<meta property="og:title" content="Studio Dolly — Hand-Painted Warli Art & Rangvan Coasters">
+<meta property="og:description" content="Hand-painted Warli folk-art and Rangvan mythology coasters and tiles, painted freehand and sealed to take a hot mug. Commissions open across paint, thread, and craft.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Studio Dolly — Hand-Painted Warli Art & Rangvan Coasters">
+<meta name="twitter:description" content="Hand-painted Warli folk-art and Rangvan mythology coasters and tiles, painted freehand and sealed to take a hot mug.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  /* Studio Dolly deliberately commits to one visual world: the warm-black
+     ground these pieces are painted on. Colors are painted
+     explicitly and are not re-themed by viewer light/dark preference. */
+
+  :root{
+    --bg: #16130f;
+    --bg-raised: #1c1811;
+    --surface: #221c14;
+    --surface-hover: #2a2318;
+    --border: #3c3325;
+    --border-soft: #2a241a;
+    --text: #f4ead8;
+    --text-muted: #b6ab96;
+    --text-faint: #8a806e;
+    --accent: #cc9c3c;
+    --accent-soft: #e6c878;
+    --shadow: rgba(0,0,0,0.45);
+
+    --font-display: 'Spectral', ui-serif, Georgia, serif;
+    --font-body: 'Jost', ui-sans-serif, system-ui, sans-serif;
+    --font-deva: 'Noto Serif Devanagari', var(--font-display);
+
+    --content-w: 1140px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ -webkit-text-size-adjust: 100%; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    padding-inline: clamp(20px, 5vw, 56px);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+
+  h1, h2, h3{
+    font-family: var(--font-display);
+    font-weight: 600;
+    margin: 0;
+    text-wrap: balance;
+    color: var(--text);
+  }
+
+  p{ margin: 0; }
+
+  .wrap{
+    max-width: var(--content-w);
+    margin-inline: auto;
+  }
+
+  .eyebrow{
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.9rem;
+  }
+
+  .prose{
+    max-width: 62ch;
+    color: var(--text-muted);
+    font-size: 1.02rem;
+  }
+
+  .prose + .prose{ margin-top: 1rem; }
+
+  hr.rule{
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  /* -------------------- flourish: a small hand-drawn tendril,
+     echoing the gold spiral corners painted on these pieces -------------------- */
+  .flourish{
+    width: 46px;
+    height: 22px;
+    display: block;
+    color: var(--accent);
+    opacity: 0.85;
+  }
+  .flourish svg{ width: 100%; height: 100%; display: block; }
+  .flourish.center{ margin-inline: auto; }
+
+  /* -------------------- hero -------------------- */
+  .hero{
+    padding-block: clamp(64px, 14vw, 118px) clamp(40px, 8vw, 64px);
+    text-align: center;
+  }
+  .hero .kicker{
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 22px;
+    opacity: 0;
+    animation: rise 0.7s ease-out 0.05s forwards;
+  }
+  .hero h1{
+    font-size: clamp(2.6rem, 8vw, 5.1rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.02;
+    opacity: 0;
+    animation: rise 0.8s ease-out 0.18s forwards;
+  }
+  .hero .tagline{
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+    color: var(--text-muted);
+    margin-top: 18px;
+    opacity: 0;
+    animation: rise 0.8s ease-out 0.32s forwards;
+  }
+  .hero .flourish{
+    margin-top: 34px;
+    opacity: 0;
+    animation: rise 0.8s ease-out 0.46s forwards;
+  }
+
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(10px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero .kicker, .hero h1, .hero .tagline, .hero .flourish{
+      animation: none; opacity: 1; transform: none;
+    }
+  }
+
+  /* -------------------- collection intro -------------------- */
+  .collection-intro{
+    padding-block: 40px 56px;
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    gap: 22px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .collection-heading{
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .collection-heading h2{
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+  }
+  .collection-heading .deva{
+    font-family: var(--font-deva);
+    /* exactly 55% of the English heading's clamp() at every breakpoint,
+       so it reads as a quiet echo, never less than half the size */
+    font-size: clamp(1.045rem, 2.2vw, 1.43rem);
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* -------------------- gallery -------------------- */
+  .gallery{
+    padding-block: 20px 72px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: clamp(22px, 3vw, 40px);
+  }
+
+  .piece{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transform: rotate(var(--r, 0deg)) translateY(var(--y, 0px));
+    transition: transform 0.35s ease;
+  }
+  .piece:hover{ transform: rotate(0deg) translateY(-4px); }
+  @media (prefers-reduced-motion: reduce){
+    .piece{ transition: none; }
+  }
+
+  .piece:nth-child(10n+1){ --r: -1.3deg; --y: 6px; }
+  .piece:nth-child(10n+2){ --r: 0.9deg;  --y: -4px; }
+  .piece:nth-child(10n+3){ --r: -0.6deg; --y: 10px; }
+  .piece:nth-child(10n+4){ --r: 1.5deg;  --y: 0px; }
+  .piece:nth-child(10n+5){ --r: -1.1deg; --y: 4px; }
+  .piece:nth-child(10n+6){ --r: 0.7deg;  --y: -6px; }
+  .piece:nth-child(10n+7){ --r: -1.6deg; --y: 8px; }
+  .piece:nth-child(10n+8){ --r: 1.1deg;  --y: -2px; }
+  .piece:nth-child(10n+9){ --r: -0.8deg; --y: 6px; }
+  .piece:nth-child(10n+10){ --r: 1.3deg; --y: -5px; }
+
+  .piece-frame{
+    aspect-ratio: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    box-shadow: 0 14px 30px -18px var(--shadow);
+    transition: background 0.35s ease, border-color 0.35s ease;
+  }
+  .piece:hover .piece-frame{
+    background: var(--surface-hover);
+    border-color: var(--accent);
+  }
+  .piece-frame img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+
+  .piece-name{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.12rem;
+  }
+  .piece-caption{
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  /* -------------------- theme block (inside a second+ collection) -------------------- */
+  .theme-block{
+    padding-top: 6px;
+    margin-bottom: 22px;
+  }
+  .theme-block .theme-name{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+    margin-bottom: 10px;
+  }
+  .theme-block .theme-deva{
+    font-family: var(--font-deva);
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.62em;
+    margin-right: 10px;
+  }
+  .theme-block .prose{ max-width: 64ch; }
+
+  .gallery--sub{
+    padding-block: 4px 56px;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: clamp(18px, 2.4vw, 30px);
+  }
+
+  .collection-divider{
+    border-top: 1px solid var(--border-soft);
+    padding-top: 40px;
+  }
+
+  /* -------------------- about -------------------- */
+  .about{
+    padding-block: 56px 56px;
+    border-top: 1px solid var(--border-soft);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+  .about h2{ font-size: clamp(1.8rem, 3.6vw, 2.3rem); }
+
+  .about-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 36px;
+    margin-top: 8px;
+  }
+
+  .care-block{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+  }
+  .care-block h3{
+    font-size: 1rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 10px;
+  }
+  .care-block p{ color: var(--text-muted); font-size: 0.95rem; }
+
+  /* -------------------- contact -------------------- */
+  .contact{
+    padding-block: 56px 64px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .contact h2{ font-size: clamp(1.8rem, 3.6vw, 2.3rem); }
+
+  .contact-chips{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 26px;
+  }
+  .contact-chip{
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+  .contact-chip:hover, .contact-chip:focus-visible{
+    border-color: var(--accent);
+    background: var(--surface);
+  }
+  .contact-chip:focus-visible{
+    outline: 2px solid var(--accent-soft);
+    outline-offset: 2px;
+  }
+  .contact-chip .label{
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--accent-soft);
+  }
+  .contact-chip .value{
+    color: var(--text-muted);
+  }
+  .contact-note{
+    color: var(--text-faint);
+    font-size: 0.86rem;
+    font-style: italic;
+    margin-top: 20px;
+  }
+
+  /* -------------------- footer -------------------- */
+  footer{
+    border-top: 1px solid var(--border-soft);
+    padding-block: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  footer .mark{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  footer .meta{
+    color: var(--text-faint);
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="kicker">A Small Studio, Painted by Hand</p>
+    <h1>Studio&nbsp;Dolly</h1>
+    <p class="tagline">Handcrafted, one piece at a time.</p>
+    <span class="flourish center">
+      <svg viewBox="0 0 46 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 11c4-9 10-9 12-2 2 7-4 9-7 4-2-3 1-6 4-4 2 1.5 1 4-1 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M44 11c-4-9-10-9-12-2-2 7 4 9 7 4 2-3-1-6-4-4-2 1.5-1 4 1 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </header>
+
+  <main>
+
+  <section class="collection-intro">
+    <p class="eyebrow">The First Collection</p>
+    <div class="collection-heading">
+      <h2>Rangvan</h2>
+      <span class="deva">रंगवन</span>
+    </div>
+    <p class="prose">Ten small tiles, ten small myths — a menagerie painted onto black, the way these stories have always been told: in colour, from memory, one creature at a time. Every collection at Studio Dolly starts from a different spark; this one started in the wild.</p>
+  </section>
+
+  <section class="gallery" aria-label="The Rangvan collection">
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images/deer.png" alt="Hand-painted tile of a deer with curling antlers, ringed by a border of star-flowers on black."></div>
+      <h3 class="piece-name">Deer</h3>
+      <p class="piece-caption">Sanskrit poets measured beauty against her eyes — mriga-nayani, "deer-eyed" — a creature that listens long before it is ever seen.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images/elephant.png" alt="Hand-painted tile of an elephant, decorated with patterned trappings, on black."></div>
+      <h3 class="piece-name">Elephant</h3>
+      <p class="piece-caption">The elephant lends its form to Ganesha, remover of obstacles — a creature whose memory, in every telling, forgets nothing.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images/fish.png" alt="Hand-painted tile of a fish, patterned in warm colour, on black."></div>
+      <h3 class="piece-name">Fish</h3>
+      <p class="piece-caption">Vishnu's first descent came as a fish, Matsya, who towed Manu's boat safely through the flood that drowned the world.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images/fox.png" alt="Hand-painted tile of a fox, patterned in warm colour, on black."></div>
+      <h3 class="piece-name">Fox</h3>
+      <p class="piece-caption">The fox owes its reputation to the Panchatantra, where wit always outlasts strength, and the smallest animal in the room is the one worth watching.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images/owl.png" alt="Hand-painted tile of an owl, on black."></div>
+      <h3 class="piece-name">Owl</h3>
+      <p class="piece-caption">Lakshmi rides an owl by night — an unglamorous choice, until you remember it's the one creature that can find wealth in the dark.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images/parakeets.png" alt="Hand-painted tile of a pair of parakeets, on black."></div>
+      <h3 class="piece-name">Parakeets</h3>
+      <p class="piece-caption">A pair of parakeets was Kamadeva's chosen escort, and across a thousand years of folk tales it's the parrot who narrates, never just watches.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images/peacock.png" alt="Hand-painted tile of a peacock in profile, on black and yellow."></div>
+      <h3 class="piece-name">Peacock</h3>
+      <p class="piece-caption">The peacock dances only for the first clouds of monsoon, and carries Kartikeya into battle — grief and glory kept in the same feather.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images/sun.png" alt="Hand-painted tile of a sun face with radiating flames, on blue."></div>
+      <h3 class="piece-name">Sun</h3>
+      <p class="piece-caption">Surya crosses the sky once a day and is thanked for it every morning — the one god whose worship needs no idol, only sunrise.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images/swan.png" alt="Hand-painted tile of a swan on water, on black."></div>
+      <h3 class="piece-name">Swan</h3>
+      <p class="piece-caption">The mythical hamsa is said to drink only the milk from a bowl of milk and water, leaving the water behind — discernment, taught as a party trick.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images/turtle.png" alt="Hand-painted tile of a turtle, on black."></div>
+      <h3 class="piece-name">Turtle</h3>
+      <p class="piece-caption">When the gods needed something steady enough to hold up a mountain, Vishnu became a turtle, Kurma, and simply stayed still.</p>
+    </article>
+
+  </section>
+
+  <section class="collection-intro collection-divider">
+    <p class="eyebrow">The Second Collection</p>
+    <div class="collection-heading">
+      <h2>Warli Katha</h2>
+      <span class="deva">वार्ली कथा</span>
+    </div>
+    <p class="prose">Warli painting belongs to no single artist — it's a tradition of the Warli people of the Sahyadri hills, kept for generations in white rice-paste on walls of mud and cow-dung, long before it ever touched a coaster. Thirty-four small scenes, drawn from one continuous village day: dancers circling at dusk, water carried home from the well, a tree that has always been sacred. Where Rangvan invents a myth for each creature, Warli Katha simply keeps watching — the different spark a second collection was always going to bring.</p>
+  </section>
+
+  <section class="theme-block">
+    <p class="theme-name"><span class="theme-deva">तारपा</span>Dance &amp; Music</p>
+    <p class="prose">The tarpa dance is the one unbroken circle in Warli life — dancers moving around a central musician playing the tarpa, a gourd-horn whose single note doesn't stop until the dancers do. Drums, shehnais, and the sunburst overhead all belong to the same afternoon.</p>
+  </section>
+  <section class="gallery gallery--sub" aria-label="Warli Katha: Dance and Music">
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-01-Dancing-Duo-with-Drum.webp" alt="Warli-style tile of two dancing figures, one with a drum, in white on gold."></div>
+      <h3 class="piece-name">Dancing Duo with Drum</h3>
+      <p class="piece-caption">Two dancers mid-step, the drum keeping the beat they've already found.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-02-Musician-with-Shehnai-v3.webp" alt="Warli-style tile of a figure playing a shehnai beneath a sunburst, in white on gold."></div>
+      <h3 class="piece-name">Musician with Shehnai</h3>
+      <p class="piece-caption">The shehnai leads the circle, and for once nobody minds being told what to do.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-05-Duo-Playing-Horns.webp" alt="Warli-style tile of two figures playing tarpa horns, in white on earth tones."></div>
+      <h3 class="piece-name">Duo Playing Horns</h3>
+      <p class="piece-caption">A pair of tarpa horns played less for melody than for keeping everyone circling the same centre.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-07-Dancers-with-Sunburst.webp" alt="Warli-style tile of dancers beneath a sunburst motif."></div>
+      <h3 class="piece-name">Dancers with Sunburst</h3>
+      <p class="piece-caption">The dance and the sun above it share the same shape — neither one has a start or an end.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-08-Duo-Drummers-v2.webp" alt="Warli-style tile of two drummers, in white on an earth-toned ground."></div>
+      <h3 class="piece-name">Duo Drummers</h3>
+      <p class="piece-caption">Two drums, one rhythm, and the whole village already knows which one to follow.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-09-Figure-Playing-Horn-with-Companion.webp" alt="Warli-style tile of a figure playing a horn beside a companion."></div>
+      <h3 class="piece-name">Horn Player with Companion</h3>
+      <p class="piece-caption">One plays, one just walks alongside — the tarpa dance always needs both.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-32-Dancer-with-Drum-v3.webp" alt="Warli-style tile of two horned animals mid-stride, one with a long curling tail."></div>
+      <h3 class="piece-name">Two Horned Animals</h3>
+      <p class="piece-caption">Two animals share the frame, horns up and tails thrown back — the same leaping line Warli hands give a dancer, borrowed here for four legs instead of two.</p>
+    </article>
+
+  </section>
+
+  <section class="theme-block">
+    <p class="theme-name"><span class="theme-deva">घर</span>Home &amp; Hearth</p>
+    <p class="prose">A Warli house is drawn the way it's built — bamboo lashed in rows, a domed thatch roof, a ladder leaning up to the loft where the year's grain waits. A tree almost always stands at the door, the way it always has.</p>
+  </section>
+  <section class="gallery gallery--sub" aria-label="Warli Katha: Home and Hearth">
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-11-Figure-with-Hammock-in-Window-v2.webp" alt="Warli-style tile of a hut with a hammock strung in the window."></div>
+      <h3 class="piece-name">Hammock in the Window</h3>
+      <p class="piece-caption">A hammock strung across a window — the one hour of the day built for doing nothing.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-15-Hut-with-Ladder-and-Hammock.webp" alt="Warli-style tile of a hut with a ladder and hammock, in white on green."></div>
+      <h3 class="piece-name">Hut with Ladder and Hammock</h3>
+      <p class="piece-caption">The ladder goes up to the loft; the hammock stays exactly where it is.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-21-Hut-with-Dancing-Figure-and-Tree.webp" alt="Warli-style tile of a hut with a dancing figure and a tree."></div>
+      <h3 class="piece-name">Hut with Dancing Figure</h3>
+      <p class="piece-caption">Even at home, under its own tree, a reason to dance turns up.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-22-Granary-with-Ladder-and-Tree-Border-v2.webp" alt="Warli-style tile of a granary with a ladder, bordered by a tree motif."></div>
+      <h3 class="piece-name">Granary with Ladder</h3>
+      <p class="piece-caption">The kudmal — the granary that carries a family to the next harvest — earns a ladder, and a border, of its own.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-23-Domed-Hut-with-Arrow-Tree-v2.webp" alt="Warli-style tile of a domed hut beside a tree, in white on red-brown."></div>
+      <h3 class="piece-name">Domed Hut with Tree</h3>
+      <p class="piece-caption">The tree beside the hut isn't decoration; a Warli house is never drawn standing alone.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-24-House-with-Row-of-Animals-v2.webp" alt="Warli-style tile of a house with a ladder and a window, beside a tree, with a figure standing in the doorway."></div>
+      <h3 class="piece-name">House with a Ladder</h3>
+      <p class="piece-caption">A ladder left leaning against the wall, a window left open — the kind of house drawn mid-chore, not posed for.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-25-House-with-Windows-and-Tree.webp" alt="Warli-style tile of a house with windows and a tree."></div>
+      <h3 class="piece-name">House with Windows</h3>
+      <p class="piece-caption">Two windows, one tree, and a house that looks lived-in rather than built.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-26-Domed-Hut-with-Tree-v2.webp" alt="Warli-style tile of a domed hut with a tree beside it."></div>
+      <h3 class="piece-name">Domed Hut, Tree Beside It</h3>
+      <p class="piece-caption">The same pairing, told again — in this tradition a good scene is allowed to repeat.</p>
+    </article>
+
+  </section>
+
+  <section class="theme-block">
+    <p class="theme-name"><span class="theme-deva">काम</span>Field &amp; Labour</p>
+    <p class="prose">Warli painting was never meant to hang at a distance and be admired — it was made by people who spent their days sowing, grinding grain, and walking to the well, and it shows. Nobody in these scenes is posed; they're mid-task.</p>
+  </section>
+  <section class="gallery gallery--sub" aria-label="Warli Katha: Field and Labour">
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-03-Duo-with-Central-Pot-v2.webp" alt="Warli-style tile of two figures around a central pot."></div>
+      <h3 class="piece-name">Duo with a Pot Between Them</h3>
+      <p class="piece-caption">Two figures around a single pot — sharing the water, or sharing the walk it took to fetch it.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-04-Hunter-with-Bow-and-Palm-Tree-v2.webp" alt="Warli-style tile of a hunter drawing a bow beneath a palm tree, in white on maroon."></div>
+      <h3 class="piece-name">Hunter with Bow</h3>
+      <p class="piece-caption">Bow drawn, one eye already on the bird that hasn't noticed him yet.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-06-Figure-Carrying-Pot-under-Palm-Tree.webp" alt="Warli-style tile of a figure carrying a pot beneath a palm tree."></div>
+      <h3 class="piece-name">Carrying a Pot Home</h3>
+      <p class="piece-caption">The palm tree marks the path home; the pot on the head keeps both hands free.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-12-Bullock-Cart-v3.webp" alt="Warli-style tile of a bullock cart pulled by two yoked pairs of oxen, with a driver and a second rider standing on the cart, in white on green."></div>
+      <h3 class="piece-name">Bullock Cart</h3>
+      <p class="piece-caption">Two yoked pairs, a full cart, and someone riding the load rather than walking beside it — however the harvest gets to market, it gets there.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-13-Duo-Pounding-Grain.webp" alt="Warli-style tile of two figures pounding grain together."></div>
+      <h3 class="piece-name">Pounding Grain</h3>
+      <p class="piece-caption">Grain pounded by two people working the same rhythm — alone, it takes twice as long.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-16-Duo-Carrying-Baskets.webp" alt="Warli-style tile of two figures carrying baskets."></div>
+      <h3 class="piece-name">Carrying Baskets</h3>
+      <p class="piece-caption">Baskets balanced, backs bent the same way — the posture of anyone who's ever carried a harvest home.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-17-Duo-Carrying-Water-Pots.webp" alt="Warli-style tile of two figures carrying water pots."></div>
+      <h3 class="piece-name">Carrying Water Pots</h3>
+      <p class="piece-caption">The well is never quite close enough, so the walk back always happens in twos.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-18-Figure-Drawing-Water-from-Well.webp" alt="Warli-style tile of a figure drawing water from a well, with a bird overhead."></div>
+      <h3 class="piece-name">Drawing Water from the Well</h3>
+      <p class="piece-caption">Rope in hand, the pot already on its way up — the well is the one place everyone in the village eventually stands.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-19-Figure-with-Bull.webp" alt="Warli-style tile of a figure standing beside a bull."></div>
+      <h3 class="piece-name">Figure with Bull</h3>
+      <p class="piece-caption">A farmer and a bull, drawn exactly the size of their friendship.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-20-Duo-under-Sun-with-Pot.webp" alt="Warli-style tile of two figures under a sun motif with a pot."></div>
+      <h3 class="piece-name">Duo Under the Sun</h3>
+      <p class="piece-caption">Midday, a pot between them, the sun directly overhead with nowhere else to be.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-28-Duo-Sowing-Field-v2.webp" alt="Warli-style tile of two figures sowing a field."></div>
+      <h3 class="piece-name">Sowing the Field</h3>
+      <p class="piece-caption">Seed going into the ground the old way — by hand, walking the field's length.</p>
+    </article>
+
+  </section>
+
+  <section class="theme-block">
+    <p class="theme-name"><span class="theme-deva">संसार</span>Creatures &amp; Sky</p>
+    <p class="prose">The Warli canvas always left room for whoever else was around — birds crossing the monsoon, a bull grazing at the frame's edge, creatures that don't need a person nearby to matter.</p>
+  </section>
+  <section class="gallery gallery--sub" aria-label="Warli Katha: Creatures and Sky">
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-27-Birds-in-the-Rain-v2.webp" alt="Warli-style tile of a figure scattering seed as rain falls and two birds cross the frame, in white on red."></div>
+      <h3 class="piece-name">Birds in the Rain</h3>
+      <p class="piece-caption">Rain falling as a trail of dots, and two birds crossing it anyway — nothing in a Warli monsoon waits for clear skies.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-29-Horned-Bull-v2.webp" alt="Warli-style tile of a horned bull, in yellow and orange on maroon."></div>
+      <h3 class="piece-name">Horned Bull</h3>
+      <p class="piece-caption">A bull standing for no reason except that a bull was there that morning.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-30-Two-Birds-v2.webp" alt="Warli-style tile of two birds facing the same direction."></div>
+      <h3 class="piece-name">Two Birds</h3>
+      <p class="piece-caption">Two birds, one trailing the other, both turned the same way — Warli's shorthand for a pair that stays a pair.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-31-Goose-with-Small-Bird-v2.webp" alt="Warli-style tile of a goose beside a smaller bird."></div>
+      <h3 class="piece-name">Goose with a Small Bird</h3>
+      <p class="piece-caption">A goose and a smaller bird sharing one frame, the big shape and the little shape drawn kindly, side by side.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-33-Horse-with-Flowing-Tail.webp" alt="Warli-style tile of a horse mid-stride with a flowing tail, in yellow and orange on maroon."></div>
+      <h3 class="piece-name">Horse with a Flowing Tail</h3>
+      <p class="piece-caption">A horse mid-stride, tail thrown back as if running from nothing in particular.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-34-Three-Birds-v2.webp" alt="Warli-style tile of three birds together."></div>
+      <h3 class="piece-name">Three Birds</h3>
+      <p class="piece-caption">Three birds instead of the usual two — proof this was drawn from what she actually saw, not a fixed formula.</p>
+    </article>
+
+  </section>
+
+  <section class="theme-block">
+    <p class="theme-name"><span class="theme-deva">वृक्षदेवता</span>The Sacred Tree</p>
+    <p class="prose">Before a house, a dancer, or a field, Warli painting starts with a tree. Vrukshadevata, the tree deity, is drawn as the source everything else grows from — the one motif almost every Warli artist returns to first.</p>
+  </section>
+  <section class="gallery gallery--sub" aria-label="Warli Katha: The Sacred Tree">
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-10-Figure-with-Flowering-Tree.webp" alt="Warli-style tile of a figure beside a flowering tree."></div>
+      <h3 class="piece-name">Figure with Flowering Tree</h3>
+      <p class="piece-caption">A tree in bloom, and someone standing close enough to notice.</p>
+    </article>
+
+    <article class="piece">
+      <div class="piece-frame"><img src="images-warli/Warli-14-Tree-of-Life.webp" alt="Warli-style tile of a single tree with visible roots and leafy branches, in white on green."></div>
+      <h3 class="piece-name">Tree of Life</h3>
+      <p class="piece-caption">Roots drawn as carefully as branches — the tree that isn't decoration but the reason the rest of the scene gets to exist.</p>
+    </article>
+
+  </section>
+
+  <section class="about">
+    <p class="eyebrow">The Studio</p>
+    <h2>By hand, every time</h2>
+    <div class="about-grid">
+      <div class="prose">
+        <p>Each piece starts as a plain tile, is drawn freehand, and is built up layer by layer in colour before being sealed under a glass-smooth coat that can take a hot mug without flinching. Nothing here comes from a mould — look closely across a set and no two are ever quite the same.</p>
+      </div>
+      <div class="prose">
+        <p>Painting is only one of the languages she works in. The same hand turns just as easily to embroidery, needlework, and craft of nearly every kind — always toward the same end, something made exquisitely rather than quickly. Commissions are open across mediums and themes, Rangvan included but never only Rangvan.</p>
+      </div>
+    </div>
+    <div class="care-block">
+      <h3>A note on care</h3>
+      <p>Wipe clean with a damp cloth. The resin seal takes a hot cup without staining, though it hasn't been tested in a dishwasher — treat each piece the way you'd treat a favourite plate.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <p class="eyebrow">Commission a Piece</p>
+    <h2>Start with a message</h2>
+    <p class="prose" style="margin-top:14px;">Every design here can be repainted to order, in a set or on its own — or start something new entirely, in paint, thread, or another craft altogether. Reach out directly:</p>
+    <div class="contact-chips">
+      <a class="contact-chip" href="mailto:anju.bhatnagar.a@gmail.com"><span class="label">Email</span><span class="value">anju.bhatnagar.a@gmail.com</span></a>
+      <a class="contact-chip" href="https://instagram.com/anju_bhatnagar4" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span><span class="value">@anju_bhatnagar4</span></a>
+    </div>
+    <p class="contact-note">Prefer WhatsApp? Say so by email or DM and it'll come straight back to you that way.</p>
+  </section>
+
+  </main>
+
+  <footer>
+    <span class="mark">Studio Dolly</span>
+    <span class="meta">Rangvan · Warli Katha · 2026</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
