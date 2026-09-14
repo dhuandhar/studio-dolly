@@ -385,8 +385,6 @@
 </style>
 </head>
 <body>
-
-
 <div class="wrap">
 
   <header class="hero">
@@ -751,10 +749,10 @@
     <h2>Start with a message</h2>
     <p class="prose" style="margin-top:14px;">Every design here can be repainted to order, in a set or on its own — or start something new entirely, in paint, thread, or another craft altogether. Reach out directly:</p>
     <div class="contact-chips">
-      <a class="contact-chip" href="mailto:anju.bhatnagar.a@gmail.com"><span class="label">Email</span><span class="value">anju.bhatnagar.a@gmail.com</span></a>
+      <a class="contact-chip" id="emailChip" href="mailto:anju.bhatnagar.a@gmail.com" onclick="copyEmailAddress()"><span class="label">Email</span><span class="value" id="emailValue">anju.bhatnagar.a@gmail.com</span></a>
       <a class="contact-chip" href="https://instagram.com/anju_bhatnagar4" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span><span class="value">@anju_bhatnagar4</span></a>
     </div>
-    <p class="contact-note">Prefer WhatsApp? Say so by email or DM and it'll come straight back to you that way.</p>
+    <p class="contact-note">Prefer WhatsApp? Say so by email or DM and it'll come straight back to you that way. Clicking Email also copies the address to your clipboard, in case your device doesn't open a mail app automatically.</p>
   </section>
 
   </main>
@@ -766,5 +764,25 @@
 
 </div>
 
+<script>
+  // The Email button still tries mailto: (works fine for visitors with a
+  // configured mail app), but many people only ever use webmail in a browser
+  // and have no mail app registered at all — for them mailto: fails silently.
+  // As a backup, every click also copies the address to the clipboard and
+  // gives a brief visual confirmation, so the visitor always has a way to
+  // reach out even when the mail-app handoff does nothing.
+  function copyEmailAddress(){
+    var email = 'anju.bhatnagar.a@gmail.com';
+    var valueEl = document.getElementById('emailValue');
+    if (!valueEl) return;
+    var original = valueEl.textContent;
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(email).then(function(){
+        valueEl.textContent = 'Copied — paste into your email app';
+        setTimeout(function(){ valueEl.textContent = original; }, 2600);
+      }).catch(function(){ /* clipboard blocked: mailto: link still tries on its own */ });
+    }
+  }
+</script>
 </body>
 </html>
